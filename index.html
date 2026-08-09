@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>AI Market Analyzer</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="bg"></div>
+
+<header>
+    <h1 class="logo">AI Market Analyzer</h1>
+
+    <nav>
+        <button class="menu-btn active" onclick="showPage('real')">
+            Real Market
+        </button>
+
+        <button class="menu-btn" onclick="showPage('otc')">
+            OTC Market
+        </button>
+
+        <button class="menu-btn" onclick="showPage('future')">
+            Future Signal
+        </button>
+    </nav>
+</header>
+
+<!-- ========================= -->
+<!-- REAL MARKET -->
+<!-- ========================= -->
+
+<section id="real" class="page active">
+
+<h2>Real Market Analysis</h2>
+
+<div class="upload-box">
+
+<input type="file" id="realImage" accept="image/*">
+
+<button onclick="analyzeChart('real')">
+Analyze Chart
+</button>
+
+</div>
+
+<div id="realLoading" class="loading"></div>
+
+<div id="realResult" class="result"></div>
+
+</section>
+
+<!-- ========================= -->
+<!-- OTC MARKET -->
+<!-- ========================= -->
+
+<section id="otc" class="page">
+
+<h2>OTC Market Analysis</h2>
+
+<div class="upload-box">
+
+<input type="file" id="otcImage" accept="image/*">
+
+<button onclick="analyzeChart('otc')">
+Analyze Chart
+</button>
+
+</div>
+
+<div id="otcLoading" class="loading"></div>
+
+<div id="otcResult" class="result"></div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FUTURE SIGNAL -->
+<!-- ========================= -->
+
+<section id="future" class="page">
+
+<h2>Future Signal</h2>
+
+<select id="market">
+
+<option>EUR/USD OTC</option>
+<option>GBP/USD OTC</option>
+<option>USD/JPY OTC</option>
+<option>AUD/USD OTC</option>
+<option>USD/CAD OTC</option>
+<option>EUR/JPY OTC</option>
+<option>GBP/JPY OTC</option>
+<option>EUR/GBP OTC</option>
+<option>NZD/USD OTC</option>
+<option>CHF/JPY OTC</option>
+<option>EUR/USD</option>
+<option>GBP/USD</option>
+<option>USD/JPY</option>
+<option>AUD/USD</option>
+<option>USD/CAD</option>
+<option>EUR/JPY</option>
+<option>GBP/JPY</option>
+<option>EUR/GBP</option>
+<option>NZD/USD</option>
+<option>CHF/JPY</option>
+
+</select>
+
+<button onclick="futureSignal()">
+Generate Signals
+</button>
+
+<div id="futureResult"></div>
+
+</section>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+
+</body>
+  </html>
